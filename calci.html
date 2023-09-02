@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc Calculator</title>
+    </head>
+    <style>
+      body{
+        background: linear-gradient(95deg, black 10%, #545454 55%, black 90%);
+      }
+        .pannel{
+        margin: 10px;
+        justify-content: space-between;
+        color: rgb(251, 214, 185);
+        padding-top: 5px;
+        padding-bottom: 10px;
+        }
+        .solar{
+            position: absolute;
+            width: 100px;
+            height:40px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: #252525;
+            margin: 0px 8px 10px 10px;
+            box-shadow: inset 3px 2px 5px 0px #8a8a41b8;
+
+        }
+        h1{
+          padding-left: 22px;
+          margin: 0px;
+        }
+
+       .main{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center baseline;
+        margin: 10% 25%;
+        width: 320px;
+        height: 500px;
+        border: solid 2px #343434;
+        border-radius: 20px;
+        background-color: rgb(50, 50, 50);
+        box-shadow: inset -1px 0px 5px 0px #fcdea5e8;
+       } 
+       .form{
+        width:300px;
+        height:370px;
+
+        align-content: center;
+        margin:0px 8px 8px 8px;
+        align-items:end;
+       }
+       
+       .input{
+        border:3px solid #6d645bbb;
+        position: relative;
+        width: 260px;
+        height: 100px;
+        border-radius: 18px 18px 5px 5px;
+        margin-bottom: 18px;
+        margin-top: 5px;
+        font-size:xx-large;
+        padding: 10px;
+        background-color: #4b4b4dca;
+        color: #fcfcfc;
+       }
+
+       button{
+          border-radius:6px;
+          width:72px;
+          height:50px;
+          font-size:large;
+        }
+        button:hover{
+            background-color: orangered;
+            color: white;
+            border: 4px solid #ff5a1e;
+
+        }
+
+    </style>
+<body>
+    <div class="main">
+        <center>
+        <div class="pannel">
+            <div class="solar">
+             <div></div>
+             <div></div>
+             <div></div>
+            </div>
+        <div><h1>Casio</h1><p style="position: absolute;right:30px;top:15px;">fx-991Ms</p></div>
+        </div>
+        <div class="form">
+           <input class="input" id="input" placeholder="0"><br>
+           <table>
+            <div class="keys">
+            <tr>
+                <button onclick="clr('c')" class="key">c</button>
+                <button onclick="display('/')" class="operator">/</button>
+                <button onclick="display('(')" class="brace">(</button>
+                <button onclick="display(')')" class="brace">)</button><br>
+              </tr>
+              <tr>
+                  <button onclick="display('7')" class="key">7</button>
+                  <button onclick="display('8')" class="key">8</button>
+                  <button onclick="display('9')" class="key">9</button>
+                  <button onclick="display('+')" class="operator">+</button><br>
+              </tr>
+              <tr>
+                <button onclick="display('4')" class="key">4</button>
+                <button onclick="display('5')" class="key">5</button>
+                <button onclick="display('6')" class="key">6</button>
+                <button onclick="display('-')" class="operator">-</button><br>
+              </tr>
+              <tr>
+                <button onclick="display('1')" class="key">1</button>
+                <button onclick="display('2')" class="key">2</button>
+                <button onclick="display('3')" class="key">3</button>
+                <button onclick="display('*')" class="operator">&times</button><br>
+              </tr>
+              <tr>
+                <button onclick="display('0')" class="key">0</button>
+                <button onclick="display('.')" class="decimal">.</button>
+                <button onclick="calculate('=')" class="calculate" style="background-color: #fe6128; color: #fcfcfc;">=</button>
+                <button onclick="display('%')" class="operator">%</button>
+              </tr>
+              </div>
+           </table> 
+        </div>
+        </center>
+    </div>
+</body>
+<script>  
+    
+    let output = document.getElementById("input");
+
+    function display(num)
+    {
+        output.value+= num;
+    }
+  
+  function calculate(){
+    try{
+        output.value=eval(output.value);
+    }
+    catch(error)
+    {
+        alert("Invalid");
+    }
+  }
+  function clr(){
+    output.value="";
+  }
+
+  
+</script>
+</html>
